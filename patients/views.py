@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from patients.models import Doctors
 from patients.models import Patients
 
@@ -22,6 +22,10 @@ def patients(request):
         selected_doctor = int(selected_doctor)
         mydoctor = Doctors.objects.all()[selected_doctor-1]
         patient_object.doctor.add(mydoctor)
+        if not len(patient_name)==0:
+            return redirect("/patients/success")
+
+
 
     doctor=Doctors.objects.all().values()
     context = {

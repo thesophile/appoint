@@ -8,7 +8,7 @@
 
         <h3>Select your Doctor</h3>
 
-        <form method="POST" action="/patients/success">
+        <form method="POST">
             {% csrf_token %}
             <select name="selected" size="3" required>
                 {% for x in Doctors %}
