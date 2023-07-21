@@ -1,0 +1,29 @@
+<html>
+    <head></head>
+
+    <body>
+        <h1>Patients</h1>
+
+        <h3>List of Doctors</h3>
+
+        <form method="POST">
+            {% csrf_token %}
+            <select name="selected" id="">
+                {% for x in Doctors %}
+                    <option value="{{x.id}}">{{x.firstname}} {{x.lastname}} </option>
+                {% endfor %}
+            </select>
+            <br>
+            <br>
+            <input type="text" placeholder="Name" name="patient_name">
+            <br>
+            <br>
+            <input type="submit">
+
+        </form>
+
+
+        <p>{{selected_doctor}}</p>
+
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1>doctors</h1>
+
+        {% for doctor_object, patients_list in master_list %}
+        <h2>{{ doctor_object.firstname }}</h2>
+        <ul>
+            {% for patient in patients_list %}
+                <li>{{ patient.name }}</li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+
+    </body>
+</html>
