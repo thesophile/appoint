@@ -1,0 +1,10 @@
+body{
+    background-color: antiquewhite;
+}
+
+a{
+    color: white;
+    background-color: rgb(8, 88, 88);
+    padding: 10px;
+    text-decoration: none;
+}
