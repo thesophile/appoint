@@ -1,14 +1,17 @@
+{% load static %}
 <html>
     <head>
-
+        <title>Success</title>
+        <link rel="stylesheet" href="{% static 'patients.css' %}">
     </head>
 
     <body>
-        <h3><a href="/">home</a>/<a href="/patients">patients</a></h3>
+        <h3 class="path"><a href="/">home</a>/<a href="/patients">patients</a></h3>
 
-        <h1>Success!!</h1>
-
-        <p>Your Appointment has been booked!</p>
+        <div class="success">
+            <h1>Success!!</h1>
+            <p>Your Appointment has been booked!</p>
+        </div>
 
     </body>
 </html>
