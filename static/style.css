@@ -1,5 +1,8 @@
 body{
     background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a{
@@ -7,4 +10,16 @@ a{
     background-color: rgb(8, 88, 88);
     padding: 10px;
     text-decoration: none;
+    margin: 10px;
+    font-size: 30px;
+}
+
+h1{
+    font-size: 80px;
+}
+
+.options{
+    display: flex;
+    justify-content: center;
+
 }
