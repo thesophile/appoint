@@ -8,16 +8,16 @@
 
         <h3>Select your Doctor</h3>
 
-        <form method="POST">
+        <form method="POST" action="/patients/success">
             {% csrf_token %}
-            <select name="selected" size="3">
+            <select name="selected" size="3" required>
                 {% for x in Doctors %}
                     <option value="{{x.id}}">{{x.firstname}} {{x.lastname}} </option>
                 {% endfor %}
             </select>
             <br>
             <br>
-            <input type="text" placeholder="Enter your Name" name="patient_name">
+            <input type="text" placeholder="Enter your Name" name="patient_name" required>
             <br>
             <br>
             <input type="submit">

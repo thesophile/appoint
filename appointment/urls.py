@@ -21,6 +21,6 @@ from patients import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('patients',include('patients.urls')),
-    path('doctors',include('doctors.urls')),
+    path('patients/',include('patients.urls')),
+    path('doctors/',include('doctors.urls')),
 ]

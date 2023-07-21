@@ -3,5 +3,6 @@ from patients import views
 
 urlpatterns = [
     path('', views.patients),
+    path('success', views.success),
     
 ]

@@ -33,3 +33,5 @@ def patients(request):
     return render(request,'patients.html',context)
 
 
+def success(request):
+    return render(request,'success.html')
