@@ -1,5 +1,5 @@
 body{
-    background-color: antiquewhite;
+    background-color: rgb(24, 120, 204);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@ body{
 
 a{
     color: white;
-    background-color: rgb(8, 88, 88);
+    background-color: rgb(18, 68, 143);
     padding: 10px;
     text-decoration: none;
     margin: 10px;
@@ -16,6 +16,7 @@ a{
 
 h1{
     font-size: 80px;
+    color: aliceblue;
 }
 
 .options{

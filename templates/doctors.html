@@ -1,18 +1,24 @@
+{% load static %}
 <html>
     <head>
         <title>Appointment Doctors</title>
+        <link rel="stylesheet" href="{% static 'doctors.css' %}">
     </head>
 
     <body>
-        <h3><a href="/">home</a>/doctors</h3>
+        <h3 class="path"><a href="/">home</a>/doctors</h3>
 
         {% for doctor_object, patients_list in master_list %}
-        <h2>{{ doctor_object.firstname }}</h2>
-        <ul>
-            {% for patient in patients_list %}
-                <li>{{ patient.name }}</li>
-            {% endfor %}
-        </ul>
+
+        <div class="doctor">
+            <h2>{{ doctor_object.firstname }}</h2>
+            <ul>
+                {% for patient in patients_list %}
+                    <li>{{ patient.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
         {% endfor %}
 
     </body>

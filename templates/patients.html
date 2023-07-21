@@ -1,28 +1,30 @@
+{% load static %}
 <html>
     <head>
         <title>Appointment Patients </title>
+        <link rel="stylesheet" href="{% static 'patients.css' %}">
     </head>
 
     <body>
-        <h3><a href="/">home</a>/patients</h3>
+        <h3 class="path"><a href="/">home</a>/patients</h3>
 
-        <h3>Select your Doctor</h3>
-
-        <form method="POST">
-            {% csrf_token %}
-            <select name="selected" size="3" required>
-                {% for x in Doctors %}
-                    <option value="{{x.id}}">{{x.firstname}} {{x.lastname}} </option>
-                {% endfor %}
-            </select>
-            <br>
-            <br>
-            <input type="text" placeholder="Enter your Name" name="patient_name" required>
-            <br>
-            <br>
-            <input type="submit">
-
-        </form>
+        <div class="select_doctor">
+            <h1>Select your Doctor</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <select name="selected" size="3" required>
+                    {% for x in Doctors %}
+                        <option value="{{x.id}}">{{x.firstname}} {{x.lastname}} </option>
+                    {% endfor %}
+                </select>
+                <br>
+                <br>
+                <input type="text" placeholder="Enter your Name" name="patient_name" required>
+                <br>
+                <br>
+                <input type="submit">
+            </form>
+        </div>
 
 
         
