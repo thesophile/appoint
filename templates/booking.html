@@ -1,0 +1,16 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1>Booking</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Name">
+
+            <button type="submit"> Submit </button>
+        </form>
+    </body>
+</html>
