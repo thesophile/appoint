@@ -12,11 +12,11 @@
 
         <div class="doctor">
             <h2>{{ doctor_object.firstname }} {{ doctor_object.lastname }}</h2>
-            <ul>
+            <ol>
                 {% for patient in patients_list %}
                     <li>{{ patient.name }}</li>
                 {% endfor %}
-            </ul>
+            </ol>
         </div>
 
         {% endfor %}
