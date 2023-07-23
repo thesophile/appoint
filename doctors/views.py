@@ -15,8 +15,8 @@ def doctors(request):
 
     for doctor_object in doctor_objects:
         
+        #get the queryset of all patients under a doctor
         patients_qs = doctor_object.patients_set.all()
-        
         patient_list = list(patients_qs)
         doctor_patients.append(patient_list)
 
