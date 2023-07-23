@@ -22,6 +22,8 @@ def patients(request):
         selected_doctor = int(selected_doctor)
         mydoctor = Doctors.objects.all()[selected_doctor-1]
         patient_object.doctor.add(mydoctor)
+        token = 1
+        request.session['token'] = token
         if not len(patient_name)==0:
             return redirect("/patients/success")
 
@@ -38,4 +40,8 @@ def patients(request):
 
 
 def success(request):
-    return render(request,'success.html')
+    token = request.session['token']
+    context= {
+        'token_no':token
+    }
+    return render(request,'success.html',context)
