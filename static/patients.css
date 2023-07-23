@@ -6,9 +6,7 @@
 body{
     background-color: rgb(24, 120, 204);
     color: aliceblue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* min-height: 100vh; */
 }
 
 a{
@@ -24,8 +22,14 @@ a{
     background-color: antiquewhite;
     width: fit-content;
     height: fit-content;
+    margin: auto;
     border: 2px solid black;
     padding: 20px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 
 }
 
@@ -62,5 +66,10 @@ input{
     height: fit-content;
     border: 2px solid black;
     padding: 20px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 
 }
