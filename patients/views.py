@@ -14,22 +14,25 @@ def patients(request):
     mydoctor = "mydoctor"
 
     if request.method=='POST':
+        #get values from form
         selected_doctor = request.POST['selected']
         patient_name = request.POST['patient_name']
+
+        #create patient object
         Patients.objects.create(name=patient_name)
         patient_object = Patients.objects.last()
 
+        #assign the patient to the selected doctor
         selected_doctor = int(selected_doctor)
         mydoctor = Doctors.objects.all()[selected_doctor-1]
         patient_object.doctor.add(mydoctor)
-        # token = mydoctor.patients_set.last()
 
+        #get the token number (from the list of patients under the selected doctor)
         patients_qs = mydoctor.patients_set.all()
         patient_list = list(patients_qs)
         token = len(patient_list)
-
-
         request.session['token'] = token
+
         if not len(patient_name)==0:
             return redirect("/patients/success")
 
