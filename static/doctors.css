@@ -21,4 +21,29 @@ a{
     color: aliceblue;
 }
 
+.login{
+    border: 2px solid black;
+    width: 150px;
+    padding: 25px 35px;
+    background-color: beige;
 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.login form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login input{
+    margin-bottom: 15px;
+}
+
+.info{
+    display: none;
+}

@@ -8,18 +8,29 @@
     <body>
         <h3 class="path"><a href="/">home</a>/doctors</h3>
 
-        {% for doctor_object, patients_list in master_list %}
+      
+            <div class="login" style="display:{{login_display}};">
+                <form method="POST" >
+                    {% csrf_token %}
+                    <input type="text" placeholder="username" name="username">
+                    <input type="text" placeholder="password">
+                    <button type="submit"> Submit </button>
+                </form>
+            </div>
+     
 
-        <div class="doctor">
-            <h2>{{ doctor_object.firstname }} {{ doctor_object.lastname }}</h2>
-            <ol>
-                {% for patient in patients_list %}
-                    <li>{{ patient.name }}</li>
-                {% endfor %}
-            </ol>
+        <div class="info" style="display:{{patient_display}};">
+            {% for doctor_object, patients_list in master_list %}
+            <div class="doctor">
+                <h2>{{ doctor_object.firstname }} {{ doctor_object.lastname }}</h2>
+                <ol>
+                    {% for patient in patients_list %}
+                        <li>{{ patient.name }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+            {% endfor %}
         </div>
-
-        {% endfor %}
 
     </body>
 </html>

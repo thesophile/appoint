@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from patients.models import Doctors
 from patients.models import Patients
 
@@ -9,6 +9,10 @@ from patients.models import Patients
 
 
 def doctors(request):
+
+    login_display = "block"
+    patient_display = "none"
+
     doctor_objects = Doctors.objects.all()
 
     doctor_patients= []
@@ -26,10 +30,18 @@ def doctors(request):
     
     master_list = zip(doctor_objects, doctor_patients) 
 
+    if request.method=='POST':
+        username = request.POST['username']
+        if not len(username)==0:
+            patient_display = "block"
+            login_display = "none"
+
     context = {
         'doctor_objects': doctor_objects,
         'doctor_patients': doctor_patients,
         'master_list':master_list,
+        'patient_display':patient_display,
+        'login_display':login_display,
     }
         
     return render(request,'doctors.html',context)
