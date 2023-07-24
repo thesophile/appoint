@@ -17,44 +17,34 @@ def doctors(request):
     doctor_qs = None
     patient_list = None
     msg = None
-    
-
-    # doctor_objects = Doctors.objects.all()
-
-    # doctor_patients= []
-
-    # for doctor_object in doctor_objects:
-        
-    #     #get the queryset of all patients under a doctor
-    #     patients_qs = doctor_object.patients_set.all()
-    #     patient_list = list(patients_qs)
-    #     doctor_patients.append(patient_list)
-
-
-    
-    #doctor = Doctors.objects.all().values()
-    #to get the list of doctors. not used in the below code.
-    
-    #master_list = zip(doctor_objects, doctor_patients) 
+    error_msg = ""
+     
 
     if request.method=='POST':
         got_username = request.POST['username']
         got_password = request.POST['password']
-        doctor_qs = Doctors.objects.get(username=got_username)
-        #real_username = doctor_qs.username
-        real_password = doctor_qs.password
+        try:
+            doctor_qs = Doctors.objects.get(username=got_username)
+            #real_username = doctor_qs.username
+            real_password = doctor_qs.password
 
-        #patient_list = doctor_qs.patients_set.all()
-        patients_qs = doctor_qs.patients_set.all()
-        patient_list = list(patients_qs)
+            #patient_list = doctor_qs.patients_set.all()
+            patients_qs = doctor_qs.patients_set.all()
+            patient_list = list(patients_qs)
 
-        if len(patient_list)==0:
-            msg="No patients yet"
+            if len(patient_list)==0:
+                msg="No patients yet"
+
+
+            if got_password == real_password:
+                patient_display = "block"
+                login_display = "none"
+            else:
+                error_msg = "wrong password"
+        except:
+            error_msg = "invalid username"
         
 
-        if got_password == real_password:
-            patient_display = "block"
-            login_display = "none"
 
     context = {
         'doctor_qs':doctor_qs,
@@ -64,6 +54,7 @@ def doctors(request):
         'patient_display':patient_display,
         'login_display':login_display,
         'msg':msg,
+        'error_msg':error_msg,
     }
         
     return render(request,'doctors.html',context)
