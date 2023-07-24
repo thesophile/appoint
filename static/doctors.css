@@ -71,3 +71,10 @@ td{
     border: 2px solid black;
     width: fit-content;
 }
+
+.space-between{
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 20px;
+}

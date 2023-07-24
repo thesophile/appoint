@@ -13,31 +13,36 @@
         </h3>
 
 
-        <div class="center box">
+        <div class="center">
             <form method="POST">
                 {% csrf_token %}
-                <table>
-                    <tr>
-                        <td><label for="fname">First name*: </label></td>
-                        <td><input type="text" name="fname" required></td>
-                    </tr>
-            
-            
-                    <tr>
-                        <td><label for="fname">Last name: </label></td>
-                        <td><input type="text" name="lname"></td>
-                    </tr>
-            
-                    <tr>
-                        <td><label for="fname"> Username*: </label></td>
-                        <td><input type="text" name="username" required></td>
-                    </tr>
-                    <tr>
-                        <td><label for="fname">Password*: </label></td>
-                        <td><input type="text" name="password" required></td>
-                    </tr>
-                </table>
-                <button type="submit" class="btn"> Register </button>
+                <div class="box">
+                    <table>
+                        <tr>
+                            <td><label for="fname">First name*: </label></td>
+                            <td><input type="text" name="fname" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="fname">Last name: </label></td>
+                            <td><input type="text" name="lname"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="fname"> Username*: </label></td>
+                            <td><input type="text" name="username" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="fname">Password*: </label></td>
+                            <td><input type="text" name="password" required></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="space-between">
+                    <a href="/doctors">
+                        <div class="btn">back</div>
+                    </a>
+                    <button type="submit" class="btn"> Register </button>
+                </div>
             </form>
             {{error_msg}}
         </div>
