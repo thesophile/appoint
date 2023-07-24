@@ -25,10 +25,9 @@ def doctors(request):
         got_password = request.POST['password']
         try:
             doctor_qs = Doctors.objects.get(username=got_username)
-            #real_username = doctor_qs.username
             real_password = doctor_qs.password
 
-            #patient_list = doctor_qs.patients_set.all()
+          
             patients_qs = doctor_qs.patients_set.all()
             patient_list = list(patients_qs)
 
@@ -62,6 +61,8 @@ def doctors(request):
 
 
 def signup(request):
+        error_msg = ""
+
         if request.method=='POST':
             firstname=request.POST['fname']
             lastname=request.POST['lname']
@@ -69,12 +70,20 @@ def signup(request):
             password=request.POST['password']
             input_len = len(firstname)*len(username)*len(password)
             if not input_len == 0:
-                doctor = Doctors(firstname=firstname,lastname=lastname,username=username,password=password)
-                doctor.save()
-                return redirect('/doctors/signup/success')
-        
+                try:
+                    doctor_qs = Doctors.objects.get(username=username)
+                    error_msg = "username already exists!"
+                except:
+                    doctor = Doctors(firstname=firstname,lastname=lastname,username=username,password=password)
+                    doctor.save()
+                    return redirect('/doctors/signup/success')
 
-        return render(request,'signup.html')
+                
+        context = {
+            'error_msg':error_msg,
+        }
+
+        return render(request,'signup.html',context)
 
 
 def register_success(request):
