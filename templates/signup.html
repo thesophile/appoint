@@ -1,10 +1,19 @@
+{% load static %}
 <html>
     <head>
-
+        <title>Signup</title>
+        <link rel="stylesheet" href="{% static 'doctors.css' %}">
     </head>
 
     <body>
-        <div class="singup">
+        <h3 class="path">
+            <a href="/">home</a>
+            <a href="/doctors">/doctors</a>
+            /signup
+        </h3>
+
+
+        <div class="center box">
             <form method="POST">
                 {% csrf_token %}
                 <table>

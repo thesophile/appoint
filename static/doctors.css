@@ -5,7 +5,7 @@
 
 body{
     background-color: rgb(24, 120, 204);
-    color: aliceblue;
+    color: black;
 }
 
 .patients{
@@ -17,43 +17,55 @@ body{
     padding: 10px 40px;
 }
 
+.path{
+    color: aliceblue;
+}
+
 a{
     color: aliceblue;
 }
 
-.container{
+.center{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
 
-.login{
+.box{
     border: 2px solid black;
-    width: 150px;
+    width: fit-content;
     padding: 25px 35px;
     background-color: beige;
 }
 
 .new_user{
-    color: black;
     width: fit-content;
     margin: auto;
     margin-top: 40px; 
 }
 
-.login form{
+.box form{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.login input{
-    margin-bottom: 15px;
+
+td{
+    padding: 5px;
 }
+
+/* .box input{
+    margin-bottom: 15px;
+} */
 
 .info{
     display: none;
 }
 
+/* .signup{
+    border:2px solid black;
+    background-color: beige;
+} */
