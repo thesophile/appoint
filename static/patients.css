@@ -4,13 +4,19 @@
 }
 
 body{
-    background-color: rgb(24, 120, 204);
-    color: aliceblue;
-    /* min-height: 100vh; */
+    height: 100%;
+    background-image: linear-gradient(to bottom right, rgb(21, 255, 0), rgb(5, 142, 184));
+    color: black;
+}
+
+.path{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 a{
-    color: aliceblue;
+    color: blue;
 }
 
 .select_doctor{
@@ -37,12 +43,7 @@ a{
     margin-bottom: 15px;
 }
 
-.path{
-    position: absolute;
-    top: 0;
-    left: 0;
 
-}
 
 select{
     font-size: large;

@@ -1,9 +1,7 @@
+
 body{
-    background-color: rgb(24, 120, 204);
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; */
+    height: 100%;
+    background-image: linear-gradient(to bottom right, rgb(21, 255, 0), rgb(5, 142, 184));
 }
 
 a{

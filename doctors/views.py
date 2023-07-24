@@ -16,7 +16,7 @@ def doctors(request):
     #these values are called but is not assigned before the submit using request.POST.
     doctor_qs = None
     patient_list = None
-    msg = None
+    msg = ""
     error_msg = ""
      
 
