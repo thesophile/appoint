@@ -62,7 +62,6 @@ td{
     display: none;
 }
 
-/* .signup{
-    border:2px solid black;
-    background-color: beige;
-} */
+.white_text{
+    color: white;
+}
