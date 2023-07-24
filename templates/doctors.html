@@ -14,7 +14,7 @@
                     {% csrf_token %}
                     <input type="text" placeholder="username" name="username">
                     <input type="text" placeholder="password" name="password">
-                    <button type="submit"> Submit </button>
+                    <button type="submit"> Login </button>
                 </form>
             </div>
      
@@ -27,6 +27,7 @@
                 {% for patient in patient_list %}
                     <li>{{patient.name}}</li>
                 {% endfor %}
+                {{msg}}
                 </ol>
 
             </div>            

@@ -16,6 +16,7 @@ def doctors(request):
     #these values are called but is not assigned before the submit using request.POST.
     doctor_qs = None
     patient_list = None
+    msg = None
     
 
     # doctor_objects = Doctors.objects.all()
@@ -46,6 +47,9 @@ def doctors(request):
         #patient_list = doctor_qs.patients_set.all()
         patients_qs = doctor_qs.patients_set.all()
         patient_list = list(patients_qs)
+
+        if len(patient_list)==0:
+            msg="No patients yet"
         
 
         if got_password == real_password:
@@ -59,6 +63,7 @@ def doctors(request):
         # 'master_list':master_list,
         'patient_display':patient_display,
         'login_display':login_display,
+        'msg':msg,
     }
         
     return render(request,'doctors.html',context)
