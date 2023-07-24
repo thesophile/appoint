@@ -14,7 +14,7 @@
                 {% csrf_token %}
                 <select name="selected" size="3" required>
                     {% for x in Doctors %}
-                        <option value="{{x.id}}">{{x.firstname}} {{x.lastname}} </option>
+                        <option value="{{x.id}}">Dr.{{x.firstname}} {{x.lastname}} </option>
                     {% endfor %}
                 </select>
                 <br>

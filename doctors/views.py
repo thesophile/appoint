@@ -62,4 +62,20 @@ def doctors(request):
 
 
 def signup(request):
-    return render(request,'signup.html')
+        if request.method=='POST':
+            firstname=request.POST['fname']
+            lastname=request.POST['lname']
+            username=request.POST['username']
+            password=request.POST['password']
+            input_len = len(firstname)*len(username)*len(password)
+            if not input_len == 0:
+                doctor = Doctors(firstname=firstname,lastname=lastname,username=username,password=password)
+                doctor.save()
+                return redirect('/doctors/signup/success')
+        
+
+        return render(request,'signup.html')
+
+
+def register_success(request):
+    return render(request,'register_success.html')

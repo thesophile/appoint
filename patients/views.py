@@ -15,16 +15,16 @@ def patients(request):
 
     if request.method=='POST':
         #get values from form
-        selected_doctor = request.POST['selected']
+        mydoctor_id = request.POST['selected']
         patient_name = request.POST['patient_name']
 
         #create patient object
         Patients.objects.create(name=patient_name)
-        patient_object = Patients.objects.last()
+        patient_object = Patients.objects.get(name=patient_name)
 
         #assign the patient to the selected doctor
-        selected_doctor = int(selected_doctor)
-        mydoctor = Doctors.objects.all()[selected_doctor-1]
+        mydoctor_id = int(mydoctor_id)
+        mydoctor = Doctors.objects.get(id=mydoctor_id)
         patient_object.doctor.add(mydoctor)
 
         #get the token number (from the list of patients under the selected doctor)

@@ -56,7 +56,7 @@ input{
     font-size: large;
 }
 
-.success{
+.center_box{
     color: black;
     display: flex;
     flex-direction: column;

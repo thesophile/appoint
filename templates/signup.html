@@ -18,23 +18,23 @@
                 {% csrf_token %}
                 <table>
                     <tr>
-                        <td><label for="fname">First name: </label></td>
-                        <td><input type="text"></td>
+                        <td><label for="fname">First name*: </label></td>
+                        <td><input type="text" name="fname" required></td>
                     </tr>
             
             
                     <tr>
                         <td><label for="fname">Last name: </label></td>
-                        <td><input type="text"></td>
+                        <td><input type="text" name="lname"></td>
                     </tr>
             
                     <tr>
-                        <td><label for="fname"> Username: </label></td>
-                        <td><input type="text"></td>
+                        <td><label for="fname"> Username*: </label></td>
+                        <td><input type="text" name="username" required></td>
                     </tr>
                     <tr>
-                        <td><label for="fname">Password: </label></td>
-                        <td><input type="text"></td>
+                        <td><label for="fname">Password*: </label></td>
+                        <td><input type="text" name="password" required></td>
                     </tr>
                 </table>
                 <button type="submit"> Register </button>
