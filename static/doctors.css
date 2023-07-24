@@ -21,16 +21,25 @@ a{
     color: aliceblue;
 }
 
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
 .login{
     border: 2px solid black;
     width: 150px;
     padding: 25px 35px;
     background-color: beige;
+}
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+.new_user{
+    color: black;
+    width: fit-content;
+    margin: auto;
+    margin-top: 40px; 
 }
 
 .login form{
@@ -47,3 +56,4 @@ a{
 .info{
     display: none;
 }
+
