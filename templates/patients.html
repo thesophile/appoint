@@ -8,21 +8,30 @@
     <body>
         <h3 class="path"><a href="/">home</a>/patients</h3>
 
-        <div class="select_doctor">
-            <h1>Select your Doctor</h1>
+        <div class="ab_center">
             <form method="POST">
                 {% csrf_token %}
-                <select name="selected" size="6" required>
-                    {% for x in Doctors %}
-                        <option value="{{x.id}}">Dr.{{x.firstname}} {{x.lastname}} </option>
-                    {% endfor %}
-                </select>
-                <br>
-                <br>
-                <input type="text" placeholder="Enter your Name" name="patient_name" required>
-                <br>
-                <br>
-                <input type="submit">
+                <div class="select_doctor">
+                    <h1>Select your Doctor</h1>
+               
+                    <select name="selected" size="6" required>
+                        {% for x in Doctors %}
+                            <option value="{{x.id}}">Dr.{{x.firstname}} {{x.lastname}} </option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="Enter your Name" name="patient_name" required>
+                    <br>
+                    <br>
+                    
+                
+                </div>
+
+                <div class="space-between">
+                    <button>Back</button>
+                    <button type="submit">Submit</button>
+                </div>
             </form>
         </div>
 

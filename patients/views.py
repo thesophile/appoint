@@ -20,7 +20,8 @@ def patients(request):
 
         #create patient object
         Patients.objects.create(name=patient_name)
-        patient_object = Patients.objects.get(name=patient_name)
+        patient_object = Patients.objects.last()
+        # patient_object = Patients.objects.get(name=patient_name)
 
         #assign the patient to the selected doctor
         mydoctor_id = int(mydoctor_id)
