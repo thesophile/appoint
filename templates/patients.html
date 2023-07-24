@@ -12,7 +12,7 @@
             <h1>Select your Doctor</h1>
             <form method="POST">
                 {% csrf_token %}
-                <select name="selected" size="3" required>
+                <select name="selected" size="6" required>
                     {% for x in Doctors %}
                         <option value="{{x.id}}">Dr.{{x.firstname}} {{x.lastname}} </option>
                     {% endfor %}
