@@ -18,6 +18,12 @@ h1{
     color: aliceblue;
 }
 
+@media (max-width:500px){
+    h1{
+        font-size: 40px;
+    }
+}
+
 .options{
     display: flex;
     justify-content: center;
