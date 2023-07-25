@@ -33,7 +33,7 @@ a{
     border: 2px solid black;
     width: fit-content;
     padding: 25px 35px;
-    background-color: beige;
+    background-color: rgb(205, 239, 243, 0.5);
 }
 
 .new_user{
