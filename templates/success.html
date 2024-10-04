@@ -1,19 +1,18 @@
 {% load static %}
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<html>
+<html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Success</title>
-        <link rel="stylesheet" href="{% static 'patients.css' %}">
+        <link rel="stylesheet" href="{% static 'success.css' %}">
     </head>
 
     <body>
-        <h3 class="path"><a href="/">home</a>/<a href="/patients">patients</a></h3>
+        <h3 class="path"><a href="/">home</a> / <a href="/patients">patients</a></h3>
 
         <div class="center_box">
             <h1>Success!!</h1>
-            <p>Your Appointment has been booked!</p>
-            <p>token number: {{token_no}}</p>
+            <p>Your appointment has been booked!</p>
+            <p>Token number: <strong>{{ token_no }}</strong></p>
         </div>
-
     </body>
 </html>
