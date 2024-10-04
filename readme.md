@@ -1,4 +1,4 @@
-# Appointment
+# Appoint 
 
 This is my first real django project.
 It is a simple python-django app to make doctor appointments online.
