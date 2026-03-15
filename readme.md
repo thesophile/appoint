@@ -1,6 +1,6 @@
 # Appoint 
 
-This is my first real django project.
+This is my first django project.
 It is a simple python-django app to make doctor appointments online.
 Any doctors can signup and after signing in they can view the list of patients who have booked for them.
 Patients can signup and book an appointment to see any doctor who has joined in the site, from a drop-down menu.
