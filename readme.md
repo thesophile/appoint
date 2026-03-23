@@ -30,7 +30,7 @@ Here, I made use of the Many-to-one database to link a single doctor to multiple
 
 1. Clone the repo
    ```
-   git clone 
+   git clone https://github.com/thesophile/appoint.git
    ```
 
 2. Create a virtual environment
